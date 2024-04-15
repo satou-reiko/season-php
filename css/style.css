@@ -1,8 +1,11 @@
 @charset "utf-8";
-*{
+html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0;box-sizing:border-box;}audio:not([controls]){display:none;height:0}hr{overflow:visible}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}summary{display:list-item}small{font-size:80%}[hidden],template{display:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}input{border-radius:0}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=number]{width:auto}[type=search][type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:0;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted}[type=reset],[type=submit],button,html [type=button]button,select{text-transform:none}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type=search]img{border-style:none;vertical-align: bottom}progress{vertical-align:baseline}svg:not(:root){overflow:hidden}audio,canvas,progress,video{display:inline-block}@media screen{[hidden~=screen]{display:inherit}[hidden~=screen]:not(:active):not(:focus):not(:target){position:absolute!important;clip:rect(0 0 0 0)!important}}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}ul,ol{list-style:none;}a{text-decoration:none;}img{max-width: 100%;vertical-align: bottom;}
+
+
+/* *{
 margin: 0;
 padding: 0;
-}
+} */
 ul{
 list-style: none;
 }
@@ -22,13 +25,14 @@ font-family: 'Yusei Magic', sans-serif;
 font-size: 42px;
 }
 .g-nav{
-height: 50px;
+height: 50px;/*  */
 background-color: #6C6A2D;
 margin-bottom: 50px;
 }
 .g-nav>ul{
 display: flex;
-width: 960px;
+/* width: 960px; */
+max-width: 960px;
 margin: 0 auto;
 }
 .g-nav li{
@@ -53,6 +57,30 @@ background-color: #797854;
 .g-nav li.current>a{
 background-color: #625f68;
 }
+@media (max-width:767px){
+   .g-nav{
+    height: 150px;
+    >ul{
+    flex-wrap: wrap;/* 折り返す */
+    >li{
+        width: 50%;
+        &:first-of-type{
+            width: 100%;
+        }
+        &:nth-last-of-type(n+2)>a{
+            border-top: 1px solid #fff;
+        }
+    }
+   }
+   }
+   .g-nav li:last-of-type>a{
+    border-right: 0;
+    }
+    .g-nav li:nth-of-type(1)>a,.g-nav li:nth-of-type(2)>a,.g-nav li:nth-of-type(4)>a{
+        border-left: 0;
+    }/* 1,2,4のボーダーが不要 */
+
+}
 
 
 footer{
@@ -67,7 +95,8 @@ line-height: 100px;
 
 /* トップページ部分 */
 main{
-width: 960px;
+/* width: 960px; */
+max-width: 960px;
 margin: 0 auto 100px;
 }
 .main-visual{
@@ -81,19 +110,39 @@ margin-bottom: 30px;
 font-size: 28px;
 }
 .main-text>p{
-width: 600px;
+/* width: 600px; */
+max-width: 600px;
 margin: 0 auto;
 line-height: 2.4;
+padding: 0 10px;/* sp用に追加 */
 }
 
 /* 季節ページ部分 */
 .wrapper{
 display: flex;
 flex-direction: row-reverse;
+@media(max-width:767px){
+flex-direction: column-reverse;/* 写真上にする */
+gap: 50px 0;/* 上下など余白 */
+padding: 0 10px;
+
+>.photo-box{
+    aspect-ratio: 4/2;
+    margin-right: 0;/* sp用にはなくす方がよい */
+    >img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
 }
-.photo-box{
-margin-right: 40px;
+
 }
+}
+
+/* .photo-box{
+/* margin-right: 40px;} */
+ */
 .text-box>h2{
 text-align: center;
 margin-bottom: 20px;
