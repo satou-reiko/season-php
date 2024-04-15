@@ -1,0 +1,131 @@
+@charset "utf-8";
+*{
+margin: 0;
+padding: 0;
+}
+ul{
+list-style: none;
+}
+a{
+text-decoration: none;
+}
+img{
+vertical-align: bottom;
+}
+/* 全ページ共通部分 */
+header{
+padding: 40px 0;
+}
+h1{
+text-align: center;
+font-family: 'Yusei Magic', sans-serif;
+font-size: 42px;
+}
+.g-nav{
+height: 50px;
+background-color: #6C6A2D;
+margin-bottom: 50px;
+}
+.g-nav>ul{
+display: flex;
+width: 960px;
+margin: 0 auto;
+}
+.g-nav li{
+width: 20%;
+height: 50px;
+}
+.g-nav a{
+display: block;
+line-height: 50px;
+text-align: center;
+color: #FFFFFF;
+border-left: 1px solid #FFFFFF;
+font-family: 'Yusei Magic', sans-serif;
+font-size: 20px;
+}
+.g-nav li:last-of-type>a{
+border-right: 1px solid #FFFFFF;
+}
+.g-nav a:hover{
+background-color: #797854;
+}
+.g-nav li.current>a{
+background-color: #625f68;
+}
+
+
+footer{
+height: 100px;
+background-color: #6C6A2D;
+}
+footer>p{
+color: #FFFFFF;
+text-align: center;
+line-height: 100px;
+}
+
+/* トップページ部分 */
+main{
+width: 960px;
+margin: 0 auto 100px;
+}
+.main-visual{
+margin-bottom: 100px;
+}
+.main-text{
+text-align: center;
+}
+.main-text>h2{
+margin-bottom: 30px;
+font-size: 28px;
+}
+.main-text>p{
+width: 600px;
+margin: 0 auto;
+line-height: 2.4;
+}
+
+/* 季節ページ部分 */
+.wrapper{
+display: flex;
+flex-direction: row-reverse;
+}
+.photo-box{
+margin-right: 40px;
+}
+.text-box>h2{
+text-align: center;
+margin-bottom: 20px;
+font-family: 'Yusei Magic', sans-serif;
+font-size: 28px;
+}
+.text-box>p{
+line-height: 1.8;
+}
+
+/* 個別ページ部分 */
+.spring>.g-nav{
+background-color: #B5495B;
+}
+.spring>footer{
+background-color: #B5495B;
+}
+.summer>.g-nav{
+background-color: #0089A7;
+}
+.summer>footer{
+background-color: #0089A7;
+}
+.fall>.g-nav{
+background-color: #9A5034;
+}
+.fall>footer{
+background-color: #9A5034;
+}
+.winter>.g-nav{
+background-color: #3C2F41;
+}
+.witer>footer{
+background-color: #3C2F41;
+}
